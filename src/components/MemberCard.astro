@@ -32,13 +32,14 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
 
     padding: 1rem;
     border-radius: 12px;
+    border: 1px solid rgba(255, 218, 3, 0.1);
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .member-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(63, 63, 63, 0.95);
+    box-shadow: 0 8px 24px rgba(255, 218, 3, 0.95);
   }
 
   .member-image {
@@ -56,6 +57,7 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
   .member-name {
     font-weight: 600;
     margin: 0;
+    color: var(--color-tertiary);
   }
 
   .member-instrument {
