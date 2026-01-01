@@ -94,6 +94,7 @@ a {
 	text-align: start;
 	justify-content: start;
 	padding: var(--padding-xs);
+	-webkit-tap-highlight-color: transparent;
 }
 
 a:hover {
