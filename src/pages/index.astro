@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import IconTopic from '@components/IconTopic.astro';
 import MemberCard from '@components/MemberCard.astro';
+import SocialLink from '@components/SocialLink.astro';
 ---
 
 <Layout
@@ -95,10 +96,47 @@ import MemberCard from '@components/MemberCard.astro';
 			</div>
 			<img src="/chopin.jpeg" alt="">
 		</section>
+		<section class="social-section">
+			<IconTopic label="Redes sociais" iconSrc="/violin.svg" />
+			<h2>Acompanhe a gente</h2>
+			<p>Siga-nos nas redes sociais para ficar por dentro das nossas novidades e eventos.</p>
+			<div>
+				<SocialLink
+					name="Instagram"
+					iconSrc="/instagram.png"
+					href="https://instagram.com/croma"
+				/>
+				<SocialLink
+					name="Facebook"
+					iconSrc="/facebook.png"
+					href="https://facebook.com/croma"
+				/>
+				<SocialLink
+					name="YouTube"
+					iconSrc="/youtube.svg"
+					href="https://youtube.com/croma"
+				/>
+			</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
+	.social-section {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 6rem;
+	}
+	.social-section div {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
 	.repertoire-section {
 		display: grid;
 		place-items: center;

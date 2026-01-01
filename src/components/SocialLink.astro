@@ -1,0 +1,58 @@
+---
+interface Props {
+  name: string;
+  iconSrc: string;
+  href?: string;
+}
+
+const { name, iconSrc, href = '#' } = Astro.props;
+---
+
+<a
+  class="social-link"
+  href={href}
+  aria-label={name}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src={iconSrc}
+    alt=""
+    aria-hidden="true"
+    class="social-icon"
+    loading="lazy"
+  />
+  <span class="social-name">{name}</span>
+</a>
+
+<style>
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+
+    background: var(--social-bg, transparent);
+    color: var(--social-fg, currentColor);
+    text-decoration: none;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .social-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .social-name {
+    line-height: 1;
+  }
+</style>
