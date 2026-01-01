@@ -1,0 +1,150 @@
+:root {
+	--color-primary: #ffffff;
+	--color-secondary: #e0e0e0;
+	--color-tertiary: #333333;
+	--color-text-dark: #111111;
+	--color-text-light: #f9f9f9;
+	--bg-light: #f0f0f0;
+	--bg-dark: #131313;
+
+	--font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--font-body: 'Arial', sans-serif;
+
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-md: 1rem;
+	--font-size-lg: 1.25rem;
+	--font-size-xl: 1.5rem;
+	--font-size-2xl: 2rem;
+	--font-size-3xl: 2.5rem;
+	--font-size-4xl: 3rem;
+	--font-size-5xl: 4rem;
+
+	--section-padding: 2rem;
+
+	--border-radius: 6px;
+	--transition-fast: 0.2s ease;
+	--transition-medium: 0.3s ease;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+
+	font-family: var(--font-body);
+	color: var(--color-text-light);
+	font-size: var(--font-size-md);
+}
+
+body {
+	background-color: var(--bg-dark);
+	line-height: 1.6;
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: var(--font-size-3xl);
+	margin-bottom: 0.75em;
+}
+
+h2 {
+	font-size: var(--font-size-2xl);
+	margin-bottom: 0.65em;
+}
+
+h3 {
+	font-size: var(--font-size-xl);
+	margin-bottom: 0.5em;
+}
+
+p {
+	line-height: 1.6;
+	margin-bottom: 1em;
+	color: var(--color-text-light);
+}
+
+a {
+	transition:
+		opacity var(--transition-fast),
+		color var(--transition-fast);
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+section {
+	padding-left: var(--section-padding);
+	padding-right: var(--section-padding);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.btn {
+	padding: 0.75rem 1.5rem;
+	border: none;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	font-weight: 500;
+	transition:
+		background-color var(--transition-medium),
+		color var(--transition-medium),
+		opacity var(--transition-fast);
+}
+
+.btn-primary {
+	background-color: var(--color-primary);
+	color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+	background-color: var(--color-secondary);
+}
+
+.btn-secondary {
+	background-color: var(--color-tertiary);
+	color: var(--color-text-light);
+}
+
+.btn-secondary:hover {
+	background-color: #555555;
+}
+
+ul,
+ol {
+	padding-left: 1.5rem;
+}
+
+li + li {
+	margin-top: 0.5rem;
+}
+
+blockquote {
+	border-left: 3px solid var(--color-primary);
+	padding-left: 1rem;
+	color: var(--color-text-light);
+	opacity: 0.8;
+}
+
+code,
+pre {
+	font-family: 'Courier New', monospace;
+	background-color: #1e1e1e;
+	color: #f9f9f9;
+	padding: 0.2rem 0.4rem;
+	border-radius: 4px;
+	overflow-x: auto;
+}
