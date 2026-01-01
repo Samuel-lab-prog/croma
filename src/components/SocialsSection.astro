@@ -1,0 +1,57 @@
+---
+import IconTopic from '@components/IconTopic.astro';
+import SocialLink from '@components/SocialLink.astro';
+
+interface SocialItem {
+	name: string;
+	iconSrc: string;
+	href: string;
+}
+
+interface Props {
+	iconSrc: string;
+	label: string;
+	title: string;
+	description: string;
+	links: SocialItem[];
+}
+
+const { iconSrc, label, title, description, links } = Astro.props;
+---
+
+<section class="social-section">
+	<IconTopic label={label} iconSrc={iconSrc} />
+
+	<h2>{title}</h2>
+	<p>{description}</p>
+
+	<div>
+		{links.map((link) => (
+			<SocialLink name={link.name} iconSrc={link.iconSrc} href={link.href} />
+		))}
+	</div>
+</section>
+
+<style>
+.social-section {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.social-section h2 {
+	margin: 0.5rem 0;
+}
+
+.social-section div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+</style>

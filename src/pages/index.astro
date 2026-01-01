@@ -2,7 +2,9 @@
 import Layout from '@layouts/Layout.astro';
 import IconTopic from '@components/IconTopic.astro';
 import MemberCard from '@components/MemberCard.astro';
-import SocialLink from '@components/SocialLink.astro';
+import GeneralSection from '@components/GeneralSection.astro';
+import SocialsSection from '@components/SocialsSection.astro';
+import HeroSection from '@components/HeroSection.astro';
 ---
 
 <Layout
@@ -10,46 +12,26 @@ import SocialLink from '@components/SocialLink.astro';
 	description='Bem vindo ao trio instrumenal Croma!'
 >
 	<main>
-		<section class='hero-section'>
-			<IconTopic
-				iconSrc='/violin.svg'
-				label='Bem-vindo(a)!'
-			/>
-			<h1>Trio musical Croma</h1>
-			<p>Explore nosso site para saber mais sobre nossa música e eventos.</p>
-			<img
-				src='/trio.png'
-				alt='Trio Croma'
-			/>
-		</section>
-		<section class='about-section'>
-			<div>
-				<IconTopic
-					iconSrc='/violin.svg'
-					label='Nossa história'
-				/>
-				<h2>Nossa jornada musical</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
-					nesciunt dicta! Consequuntur excepturi corrupti, aperiam omnis libero,
-					ipsa cum sapiente ab debitis, molestias quisquam obcaecati deserunt
-					consectetur aspernatur at neque!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
-					tempora. Não é como se nós conseguíssemos fazer muito mais quefdjfdkjfd
-				</p>
-				<a
-					href='/about'
-					class='btn btn-primary'
-					>Ver história completa</a
-				>
-			</div>
-			<img
-				src='/chopin.jpeg'
-				alt=''
-			/>
-		</section>
+		<HeroSection
+			iconSrc='/violin.svg'
+			label='Bem vindo(a)!'
+			title='Trio Instrumental Croma'
+			description='Música que toca a alma e eleva o espírito.'
+			imageSrc='/trio.png'
+			imageAlt='Imagem de músicos tocando instrumentos clássicos'
+		/>
+		<GeneralSection
+			iconSrc='/violin.svg'
+			label='Sobre nós'
+			title='Conheça o Croma'
+			paragraphs={[
+				'O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+				'Nosso repertório abrange uma ampla gama de estilos musicais, desde clássicos atemporais até composições contemporâneas. Cada apresentação é cuidadosamente elaborada para proporcionar uma experiência única ao público.',
+			]}
+			imageSrc='/chopin.jpeg'
+			ctaHref='/sobre'
+			ctaLabel='Saiba mais sobre nós'
+		/>
 		<section class='members-section'>
 			<div>
 				<IconTopic
@@ -80,87 +62,45 @@ import SocialLink from '@components/SocialLink.astro';
 				/>
 			</div>
 		</section>
-		<section class="repertoire-section">
-			<div>
-				<IconTopic
-					iconSrc='/violin.svg'
-					label='Repertório'
-				/>
-				<h2>Nosso repertório</h2>
-				<p>Explore as peças musicais que interpretamos em nossas apresentações.</p>
-				<p>Performamos os mais diversos repertórios musicais, desde clássicos como 
-					Chopin e Beethoven até músicas contemporâneas e trilhas sonoras de filmes.
-				</p>
-				<a
-					href="/repertorio"
-					class="btn btn-primary"
-					>Ver repertório completo</a
-				>
-			</div>
-			<img src="/chopin.jpeg" alt="">
-		</section>
-		<section class="social-section">
-			<IconTopic label="Redes sociais" iconSrc="/violin.svg" />
-			<h2>Acompanhe a gente</h2>
-			<p>Siga-nos nas redes sociais para ficar por dentro das nossas novidades e eventos.</p>
-			<div>
-				<SocialLink
-					name="Instagram"
-					iconSrc="/instagram.png"
-					href="https://instagram.com/croma"
-				/>
-				<SocialLink
-					name="Facebook"
-					iconSrc="/facebook.png"
-					href="https://facebook.com/croma"
-				/>
-				<SocialLink
-					name="YouTube"
-					iconSrc="/youtube.svg"
-					href="https://youtube.com/croma"
-				/>
-			</div>
-		</section>
+		<GeneralSection
+			iconSrc='/violin.svg'
+			label='Repertório'
+			title='Nosso Repertório'
+			paragraphs={[
+				'Nosso repertório é cuidadosamente selecionado para oferecer uma experiência musical diversificada e envolvente. Incluímos peças clássicas renomadas, bem como composições contemporâneas que refletem as tendências atuais da música instrumental.',
+				'Cada apresentação é adaptada ao público e ao evento, garantindo que nossa música ressoe de maneira única em cada ocasião. Estamos sempre abertos a sugestões e pedidos especiais para tornar nossas performances ainda mais memoráveis.',
+			]}
+			imageSrc='/chopin.jpeg'
+			ctaHref='/repertorio'
+			ctaLabel='Explore nosso repertório'
+		/>
+		<SocialsSection
+			iconSrc='/violin.svg'
+			label='Redes Sociais'
+			title='Conecte-se Conosco'
+			description='Siga-nos nas redes sociais para ficar por dentro das nossas últimas novidades, eventos e performances.'
+			links={[
+				{
+					name: 'Instagram',
+					iconSrc: '/instagram.png',
+					href: 'https://instagram.com/croma',
+				},
+				{
+					name: 'Facebook',
+					iconSrc: '/facebook.png',
+					href: 'https://facebook.com/croma',
+				},
+				{
+					name: 'YouTube',
+					iconSrc: '/youtube.svg',
+					href: 'https://youtube.com/croma',
+				},
+			]}
+		/>
 	</main>
 </Layout>
 
 <style>
-	.social-section {
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding-bottom: 4rem;
-	}
-	.social-section div {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		gap: 1rem;
-		margin-top: 1rem;
-	}
-
-	.repertoire-section {
-		display: grid;
-		place-items: center;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	}
-	.repertoire-section div {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: start;
-	}
-
-	.repertoire-section img {
-		max-width: 35rem;
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
-
 	.members-section {
 		text-align: center;
 	}
@@ -174,38 +114,5 @@ import SocialLink from '@components/SocialLink.astro';
 		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		gap: 1.5rem;
 		margin-top: 2rem;
-	}
-
-	.hero-section {
-		height: 90vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		text-align: center;
-	}
-	.hero-section img {
-		width: 100%;
-		max-width: 60rem;
-		display: block;
-		margin: 1rem auto;
-	}
-	.about-section {
-		display: grid;
-		place-items: center;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	}
-	.about-section div {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: start;
-	}
-	.about-section img {
-		max-width: 35rem;
-		width: 100%;
-		height: auto;
-		object-fit: cover;
 	}
 </style>

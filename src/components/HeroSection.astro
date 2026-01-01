@@ -1,0 +1,42 @@
+---
+import IconTopic from '@components/IconTopic.astro';
+
+interface Props {
+	iconSrc: string;
+	label: string;
+	title: string;
+	description: string;
+	imageSrc: string;
+	imageAlt?: string;
+}
+
+const { iconSrc, label, title, description, imageSrc, imageAlt = '' } = Astro.props;
+---
+
+<section class="hero-section">
+	<IconTopic iconSrc={iconSrc} label={label} />
+
+	<h1>{title}</h1>
+	<p>{description}</p>
+
+	<img src={imageSrc} alt={imageAlt} />
+</section>
+
+<style>
+.hero-section {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 1rem;
+}
+
+.hero-section img {
+	width: 100%;
+	max-width: 60rem;
+	display: block;
+	margin: 1rem auto;
+}
+</style>
