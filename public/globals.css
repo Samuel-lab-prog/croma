@@ -20,11 +20,14 @@
 	--font-size-4xl: 3rem;
 	--font-size-5xl: 4rem;
 
-	--section-padding: 2rem;
+	--padding-xs: 2rem;
+	--padding-sm: 4rem;
+	--padding-md: 6rem;
+	--padding-lg: 8rem;
+	--padding-xl: 10rem;
 
-	--border-radius: 6px;
-	--transition-fast: 0.2s ease;
-	--transition-medium: 0.3s ease;
+	--transition-fast: all 0.2s ease;
+	--transition-medium: all 0.3s ease;
 }
 
 * {

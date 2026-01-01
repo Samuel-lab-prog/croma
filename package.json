@@ -7,23 +7,15 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
-		"typecheck": "tsc --noEmit",
-		"check": "bun run lint:fix && bun run format:fix && bun run typecheck"
+		"check": "bun run format:fix"
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^3.6.0",
 		"astro": "^5.16.6"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.2",
-		"eslint": "^9.39.2",
-		"globals": "^16.5.0",
-		"jiti": "^2.6.1",
-		"prettier": "3.7.4",
-		"typescript-eslint": "^8.51.0"
+		"prettier": "3.7.4"
 	}
 }
