@@ -123,6 +123,12 @@ section {
 	padding-bottom: var(--section-padding-y);
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
 .btn {
 	display: inline-flex;
 	align-items: center;

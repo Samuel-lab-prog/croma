@@ -76,10 +76,48 @@ import MemberCard from '@components/MemberCard.astro';
 				/>
 			</div>
 		</section>
+		<section class="repertoire-section">
+			<div>
+				<IconTopic
+					iconSrc='/violin.svg'
+					label='Repertório'
+				/>
+				<h2>Nosso repertório</h2>
+				<p>Explore as peças musicais que interpretamos em nossas apresentações.</p>
+				<p>Performamos os mais diversos repertórios musicais, desde clássicos como 
+					Chopin e Beethoven até músicas contemporâneas e trilhas sonoras de filmes.
+				</p>
+				<a
+					href="/repertorio"
+					class="btn btn-primary"
+					>Ver repertório completo</a
+				>
+			</div>
+			<img src="/chopin.jpeg" alt="">
+		</section>
 	</main>
 </Layout>
 
 <style>
+	.repertoire-section {
+		display: grid;
+		place-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+	.repertoire-section div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+	}
+
+	.repertoire-section img {
+		max-width: 35rem;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+
 	.members-section {
 		text-align: center;
 	}
