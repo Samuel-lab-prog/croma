@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import IconTopic from '@components/IconTopic.astro';
 ---
 
 <Layout
@@ -7,9 +8,34 @@ import Layout from '@layouts/Layout.astro';
 	description='Bem vindo ao trio instrumenal Croma!'
 >
 	<main>
-		<section>
+		<section class='hero-section'>
+			<IconTopic iconSrc='/violin.svg' label='Bem-vindo(a)!' />
+			<h1>Trio musical Croma</h1>
+			<p>Explore nosso site para saber mais sobre nossa música e eventos.</p>
+			<img
+				src='/trio.png'
+				alt='Trio Croma'
+			/>
 		</section>
 	</main>
 </Layout>
 
-<style></style>
+<style>
+	.hero-section {
+		height: 90vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		text-align: center;
+	}
+
+	.hero-section img {
+		width: 100%;
+		max-width: 60rem;
+		display: block;
+		margin: 1rem auto;
+	}
+</style>

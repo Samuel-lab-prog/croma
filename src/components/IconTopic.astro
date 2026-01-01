@@ -1,0 +1,34 @@
+---
+const { iconSrc, label } = Astro.props;
+---
+
+<div>
+  <img src={iconSrc} alt={label}>
+  <p>{label}</p>  
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+
+  p {
+    font-size: var(--font-size-lg);
+    height: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+  }
+
+
+</style>
