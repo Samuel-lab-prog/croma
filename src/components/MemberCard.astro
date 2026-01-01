@@ -4,9 +4,10 @@ interface Props {
   instrument: string;
   imgSrc: string;
   imgAlt?: string;
+  href: string;
 }
 
-const { name, instrument, imgSrc, imgAlt } = Astro.props;
+const { name, instrument, imgSrc, imgAlt, href } = Astro.props;
 ---
 
 <article class="member-card">
@@ -20,6 +21,7 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
   <div class="member-info">
     <h3 class="member-name">{name}</h3>
     <p class="member-instrument">{instrument}</p>
+    <a href={href} class="btn btn-primary">Ver mais</a>
   </div>
 </article>
 
@@ -39,7 +41,7 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
 
   .member-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(255, 218, 3, 0.95);
+    box-shadow: 0 8px 24px rgba(255, 218, 3, 0.55);
   }
 
   .member-image {
@@ -63,5 +65,6 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
   .member-instrument {
     opacity: 0.75;
     margin: 0.25rem 0 0;
+    margin-bottom: 1rem;
   }
 </style>
