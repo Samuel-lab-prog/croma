@@ -82,10 +82,15 @@ h3 {
 
 p {
 	margin-bottom: 1em;
+	max-width: 50vw;
 }
 
 a {
 	transition: var(--transition-fast);
+
+	display: inline-flex;
+	text-align: start;
+	justify-content: start;
 }
 
 a:hover {
