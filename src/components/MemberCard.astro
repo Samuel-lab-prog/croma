@@ -1,0 +1,65 @@
+---
+interface Props {
+  name: string;
+  instrument: string;
+  imgSrc: string;
+  imgAlt?: string;
+}
+
+const { name, instrument, imgSrc, imgAlt } = Astro.props;
+---
+
+<article class="member-card">
+  <img
+    src={imgSrc}
+    alt={imgAlt ?? `Foto de ${name}`}
+    loading="lazy"
+    class="member-image"
+  />
+
+  <div class="member-info">
+    <h3 class="member-name">{name}</h3>
+    <p class="member-instrument">{instrument}</p>
+  </div>
+</article>
+
+<style>
+  .member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 1rem;
+    border-radius: 12px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(63, 63, 63, 0.95);
+  }
+
+  .member-image {
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .member-info {
+    text-align: center;
+  }
+
+  .member-name {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .member-instrument {
+    opacity: 0.75;
+    margin: 0.25rem 0 0;
+  }
+</style>

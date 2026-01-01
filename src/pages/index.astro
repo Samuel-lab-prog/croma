@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import IconTopic from '@components/IconTopic.astro';
+import MemberCard from '@components/MemberCard.astro';
 ---
 
 <Layout
@@ -8,7 +9,7 @@ import IconTopic from '@components/IconTopic.astro';
 	description='Bem vindo ao trio instrumenal Croma!'
 >
 	<main>
-		<sectio class='hero-section'>
+		<section class='hero-section'>
 			<IconTopic
 				iconSrc='/violin.svg'
 				label='Bem-vindo(a)!'
@@ -19,7 +20,7 @@ import IconTopic from '@components/IconTopic.astro';
 				src='/trio.png'
 				alt='Trio Croma'
 			/>
-		</sectio>
+		</section>
 		<section class='about-section'>
 			<div>
 				<IconTopic
@@ -35,16 +36,65 @@ import IconTopic from '@components/IconTopic.astro';
 				</p>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
-					tempora.
+					tempora. Não é como se nós conseguíssemos fazer muito mais quefdjfdkjfd
 				</p>
-				<a href="/about" class="btn btn-primary">Ver história completa</a>
+				<a
+					href='/about'
+					class='btn btn-primary'
+					>Ver história completa</a
+				>
 			</div>
-			<img src="/chopin.jpeg" alt="">
+			<img
+				src='/chopin.jpeg'
+				alt=''
+			/>
+		</section>
+		<section class='members-section'>
+			<div>
+				<IconTopic
+					label='Integrantes'
+					iconSrc='/violin.svg'
+				/>
+				<h2>Conheça os membros do Croma</h2>
+				<p>Descubra mais sobre os talentosos músicos que compõem nosso trio.</p>
+			</div>
+			<div class='members-grid'>
+				<MemberCard
+					name='Ana Silva'
+					instrument='Violinista'
+					imgSrc='/chopin.jpeg'
+				/>
+				<MemberCard
+					name='Bruno Souza'
+					instrument='Pianista'
+					imgSrc='/chopin.jpeg'
+				/>
+				<MemberCard
+					name='Carla Mendes'
+					instrument='Cellista'
+					imgSrc='/chopin.jpeg'
+				/>
+			</div>
 		</section>
 	</main>
 </Layout>
 
 <style>
+	.members-section {
+		text-align: center;
+	}
+	.members-section > div:first-of-type {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.members-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
 	.hero-section {
 		height: 90vh;
 		display: flex;
