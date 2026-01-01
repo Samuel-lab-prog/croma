@@ -8,14 +8,38 @@ import IconTopic from '@components/IconTopic.astro';
 	description='Bem vindo ao trio instrumenal Croma!'
 >
 	<main>
-		<section class='hero-section'>
-			<IconTopic iconSrc='/violin.svg' label='Bem-vindo(a)!' />
+		<sectio class='hero-section'>
+			<IconTopic
+				iconSrc='/violin.svg'
+				label='Bem-vindo(a)!'
+			/>
 			<h1>Trio musical Croma</h1>
 			<p>Explore nosso site para saber mais sobre nossa música e eventos.</p>
 			<img
 				src='/trio.png'
 				alt='Trio Croma'
 			/>
+		</sectio>
+		<section class='about-section'>
+			<div>
+				<IconTopic
+					iconSrc='/violin.svg'
+					label='Nossa história'
+				/>
+				<h2>Nossa jornada musical</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+					nesciunt dicta! Consequuntur excepturi corrupti, aperiam omnis libero,
+					ipsa cum sapiente ab debitis, molestias quisquam obcaecati deserunt
+					consectetur aspernatur at neque!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
+					tempora.
+				</p>
+				<a href="/about" class="btn btn-primary">Ver história completa</a>
+			</div>
+			<img src="/chopin.jpeg" alt="">
 		</section>
 	</main>
 </Layout>
@@ -23,7 +47,6 @@ import IconTopic from '@components/IconTopic.astro';
 <style>
 	.hero-section {
 		height: 90vh;
-
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -31,11 +54,27 @@ import IconTopic from '@components/IconTopic.astro';
 
 		text-align: center;
 	}
-
 	.hero-section img {
 		width: 100%;
 		max-width: 60rem;
 		display: block;
 		margin: 1rem auto;
+	}
+	.about-section {
+		display: grid;
+		place-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+	.about-section div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+	}
+	.about-section img {
+		max-width: 35rem;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
 	}
 </style>
