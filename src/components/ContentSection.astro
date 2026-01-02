@@ -7,28 +7,27 @@ interface Props {
 const { title, paragraphs } = Astro.props;
 ---
 
-<section class="content-section">
+<section class='content-section'>
 	<h2>{title}</h2>
 
-	{paragraphs.map((text) => (
-		<p>{text}</p>
-	))}
+	{paragraphs.map((text) => <p>{text}</p>)}
 
 	<slot />
 </section>
 
 <style>
-.content-section {
-	display: flex;
-	flex-direction: column;
-  padding-top: clamp(1rem, 3vw, 2rem);
-}
+	.content-section {
+		display: flex;
+		flex-direction: column;
+		padding-top: clamp(1rem, 3vw, 2rem);
+	}
 
-.content-section p {
-	max-width: 100%;
-}
+	.content-section p {
+		max-width: 100%;
+		text-align: justify;
+	}
 
-.content-section h2 {
-	color: var(--color-tertiary);
-}
+	.content-section h2 {
+		color: var(--color-tertiary);
+	}
 </style>

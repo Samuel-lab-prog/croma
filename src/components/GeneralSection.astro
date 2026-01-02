@@ -24,43 +24,60 @@ const {
 } = Astro.props;
 ---
 
-<section class="about-section">
+<section class='about-section'>
 	<div>
-		<IconTopic iconSrc={iconSrc} label={label} />
+		<IconTopic
+			iconSrc={iconSrc}
+			label={label}
+		/>
 
 		<h2>{title}</h2>
 
-		{paragraphs.map((text) => (
-			<p>{text}</p>
-		))}
+		{paragraphs.map((text) => <p>{text}</p>)}
 
-		{ctaHref && (
-			<a href={ctaHref} class="btn btn-primary">
-				{ctaLabel}
-			</a>
-		)}
+		{
+			ctaHref && (
+				<a
+					href={ctaHref}
+					class='btn btn-primary'
+				>
+					{ctaLabel}
+				</a>
+			)
+		}
 	</div>
 
-	<img src={imageSrc} alt={imageAlt} />
+	<img
+		src={imageSrc}
+		alt={imageAlt}
+	/>
 </section>
+
 <style>
-.about-section {
-	display: grid;
-	place-items: center;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+	.about-section {
+		display: grid;
+		place-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
 
-.about-section div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: start;
-}
+	.about-section div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+	}
 
-.about-section img {
-	max-width: 35rem;
-	width: 100%;
-	height: auto;
-	object-fit: cover;
-	border-radius: 0.5rem;
-}
+	.about-section img {
+		max-width: 35rem;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 0.5rem;
+	}
+
+	@media (max-width: 600px) {
+		.about-section img {
+			display: none;
+		}
+	}
+</style>
