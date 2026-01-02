@@ -1,0 +1,70 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ContentSection from '@components/ContentSection.astro';
+import FigureImage from '@components/FigureImage.astro';
+---
+
+<Layout
+	title='Croma | Sobre Nós'
+	description='Saiba mais sobre o trio instrumental Croma.'
+>
+	<main>
+		<ContentSection
+			title='Sobre Nós'
+			paragraphs={[
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, placeat id animi praesentium incidunt veniam at. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+				'O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+			]}
+		>
+			<FigureImage
+				imgSrc='/chopin.jpeg'
+				alt='Imagem de músicos tocando instrumentos clássicos'
+				description='O trio Croma em uma apresentação ao vivo.'
+				maxWidth='20rem'
+			/>
+		</ContentSection>
+		<ContentSection
+			title='Sobre Nós'
+			paragraphs={[
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, placeat id animi praesentium incidunt veniam at. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+				'O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+			]}
+		>
+			<FigureImage
+				imgSrc='/chopin.jpeg'
+				alt='Imagem de músicos tocando instrumentos clássicos'
+				description='O trio Croma em uma apresentação ao vivo.'
+				maxWidth='20rem'
+			/>
+		</ContentSection>
+		<ContentSection
+			title='Sobre Nós'
+			paragraphs={[
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, placeat id animi praesentium incidunt veniam at. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+				'O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+			]}
+		/>
+		<ContentSection
+			title='Sobre Nós'
+			paragraphs={[
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, placeat id animi praesentium incidunt veniam at. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+				'O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. O Croma é um trio instrumental dedicado a trazer performances musicais emocionantes e envolventes. Composto por talentosos músicos, o grupo se destaca pela sua versatilidade e paixão pela música.',
+			]}
+		/>
+	</main>
+</Layout>
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		padding-top: 4rem;
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+	p {
+		max-width: 100%;
+	}
+	h2 {
+		color: var(--color-tertiary);
+	}
+</style>

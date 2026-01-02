@@ -1,0 +1,33 @@
+---
+interface Props {
+	title: string;
+	paragraphs: string[];
+}
+
+const { title, paragraphs } = Astro.props;
+---
+
+<section class="content-section">
+	<h2>{title}</h2>
+
+	{paragraphs.map((text) => (
+		<p>{text}</p>
+	))}
+
+	<slot />
+</section>
+
+<style>
+.content-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.content-section p {
+	max-width: 100%;
+}
+
+.content-section h2 {
+	color: var(--color-tertiary);
+}
+</style>
