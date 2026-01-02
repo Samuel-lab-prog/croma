@@ -4,10 +4,9 @@ interface Props {
   instrument: string;
   imgSrc: string;
   imgAlt?: string;
-  href: string;
 }
 
-const { name, instrument, imgSrc, imgAlt, href } = Astro.props;
+const { name, instrument, imgSrc, imgAlt } = Astro.props;
 ---
 
 <article class="member-card">
@@ -21,7 +20,7 @@ const { name, instrument, imgSrc, imgAlt, href } = Astro.props;
   <div class="member-info">
     <h3 class="member-name">{name}</h3>
     <p class="member-instrument">{instrument}</p>
-    <a href={href} class="btn btn-primary">Ver mais</a>
+    <a href={`/integrantes/${name}`} class="btn btn-primary">Ver mais</a>
   </div>
 </article>
 

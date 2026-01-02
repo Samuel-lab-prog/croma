@@ -5,6 +5,8 @@ import MemberCard from '@components/MemberCard.astro';
 import GeneralSection from '@components/GeneralSection.astro';
 import SocialsSection from '@components/SocialsSection.astro';
 import HeroSection from '@components/HeroSection.astro';
+
+import { members } from '@data/members';
 ---
 
 <Layout
@@ -42,24 +44,16 @@ import HeroSection from '@components/HeroSection.astro';
 				<p>Descubra mais sobre os talentosos músicos que compõem nosso trio.</p>
 			</div>
 			<div class='members-grid'>
-				<MemberCard
-					name='Ana Silva'
-					instrument='Violinista'
-					imgSrc='/chopin.jpeg'
-					href='/integrantes/ana-silva'
-				/>
-				<MemberCard
-					name='Bruno Souza'
-					instrument='Pianista'
-					imgSrc='/chopin.jpeg'
-					href='/integrantes/bruno-souza'
-				/>
-				<MemberCard
-					name='Carla Mendes'
-					instrument='Cellista'
-					imgSrc='/chopin.jpeg'
-					href='/integrantes/carla-mendes'
-				/>
+				{
+					members.map((member) => (
+						<MemberCard
+							name={member.name}
+							instrument={member.instrument}
+							imgSrc={member.image}
+							imgAlt={`${member.name} – ${member.instrument}`}
+						/>
+					))
+				}
 			</div>
 		</section>
 		<GeneralSection

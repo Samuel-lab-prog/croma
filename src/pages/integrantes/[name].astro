@@ -1,0 +1,56 @@
+---
+import { members } from '@data/members';
+import FigureImage from '@components/FigureImage.astro';
+import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	return members.map((member) => ({
+		params: { name: member.name },
+		props: { member },
+	}));
+}
+
+const { member } = Astro.props;
+---
+
+<Layout
+	title={`Croma | ${member.name}`}
+	description={`Saiba mais sobre ${member.name}, nosso talentoso(a) ${member.instrument}.`}
+>
+	<main>
+		<section>
+			<h1>{member.name}</h1>
+			<p><strong>Instrumento:</strong> {member.instrument}</p>
+			<p>{member.paragraphs[0]}</p>
+			{
+				member.image && (
+					<FigureImage
+						imgSrc={member.image}
+						description={`${member.name} – ${member.instrument}`}
+						maxWidth='20rem'
+					/>
+				)
+			}
+      <p>{member.paragraphs[1]}</p>
+		</section>
+	</main>
+</Layout>
+<style>
+  main {
+		display: flex;
+		flex-direction: column;
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+  
+  h1 {
+    color: var(--color-tertiary);
+  }
+
+  strong {
+    color: white;
+  }
+  p {
+    max-width: 100%;
+  }
+</style>
