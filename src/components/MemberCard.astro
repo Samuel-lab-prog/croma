@@ -30,7 +30,6 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-
     padding: 1rem;
     border-radius: 12px;
     border: 1px solid rgba(255, 218, 3, 0.1);
@@ -40,12 +39,12 @@ const { name, instrument, imgSrc, imgAlt } = Astro.props;
 
   .member-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(255, 218, 3, 0.55);
+    box-shadow: 0 8px 24px rgba(255, 218, 3, 0.15);
   }
 
   .member-image {
     width: 100%;
-    max-width: 220px;
+    max-width: 150px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 10px;

@@ -37,7 +37,7 @@
 	--line-height-loose: 1.8;
 
 	--section-padding-x: clamp(0.5rem, 5vw, 8rem);
-	--section-padding-y: clamp(0.5rem, 4vw, 6rem);
+	--section-padding-y: clamp(2rem, 5vw, 6rem);
 
 	--transition-fast: all 0.2s ease-in-out;
 	--transition-medium: all 0.3s ease-in-out;
