@@ -1,4 +1,4 @@
-name: Frontend CI
+name: Frontend CI & Deploy
 
 on:
   push:
@@ -12,11 +12,45 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Run prettier check
+      - name: Run Prettier check
         run: npm run format
 
-      - name: Build
+      - name: Build project
         run: npm run build
+
+      - name: Upload build artifacts for deploy
+        uses: actions/upload-artifact@v3
+        with:
+          name: astro-dist
+          path: ./dist
+
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: astro-dist
+          path: ./dist
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Sync S3 bucket
+        run: |
+          aws s3 sync ./dist s3://croma-bucket-samuel --delete
+          aws s3 cp ./dist s3://croma-bucket-samuel --recursive --acl public-read
