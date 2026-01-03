@@ -6,4 +6,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://croma-plum.vercel.app/',
 	integrations: [sitemap()],
+	build: {
+		format: 'file',
+		assets: 'assets',
+	},
 });
