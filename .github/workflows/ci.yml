@@ -53,4 +53,3 @@ jobs:
       - name: Sync S3 bucket
         run: |
           aws s3 sync ./dist s3://croma-bucket-samuel --delete
-          aws s3 cp ./dist s3://croma-bucket-samuel --recursive --acl public-read
